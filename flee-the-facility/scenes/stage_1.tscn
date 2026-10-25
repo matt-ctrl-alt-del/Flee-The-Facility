@@ -1,14 +1,17 @@
 [gd_scene format=3 uid="uid://pv1ogywql5j"]
 
-[ext_resource type="PackedScene" uid="uid://xrcq2njbqmll" path="res://scenes/map.tscn" id="1_u47qm"]
-[ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/player.tscn" id="2_e77qm"]
+[ext_resource type="Script" uid="uid://jp5kn1q5ng6m" path="res://scripts/stage_1.gd" id="1_e77qm"]
+[ext_resource type="PackedScene" uid="uid://xrcq2njbqmll" path="res://scenes/map1.tscn" id="1_u47qm"]
+[ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/playerstage1.tscn" id="2_e77qm"]
 [ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="3_kx1yv"]
 
 [node name="stage1" type="Node2D" unique_id=847449201]
+script = ExtResource("1_e77qm")
 
 [node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
 
 [node name="player" parent="." unique_id=506297317 instance=ExtResource("2_e77qm")]
+position = Vector2(49, 443)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889432277]
 visible = false

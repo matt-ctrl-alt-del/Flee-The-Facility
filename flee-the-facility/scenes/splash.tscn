@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dojvhb7u3vntx"]
 
-[node name="splash" type="Control" unique_id=2039662830]
+[ext_resource type="Script" uid="uid://dranj4nejbb6w" path="res://scripts/splash.gd" id="1_86pdq"]
+[ext_resource type="PackedScene" uid="uid://duqnpwdoufxdy" path="res://scenes/Main_menu.tscn" id="2_10vqf"]
+[ext_resource type="Texture2D" uid="uid://cdut3stdprurv" path="res://sprites/aseprite/fleethefacility_splash.jpg" id="3_4rrho"]
+
+[node name="splash" type="Control" unique_id=2039662830 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -8,6 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_86pdq")
+load_scene = ExtResource("2_10vqf")
+splash_screen = NodePath("CenterContainer/TextureRect")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1089966638]
 layout_mode = 1
@@ -28,5 +35,9 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer" unique_id=1979272356]
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1768824502]
+layout_mode = 2
+texture = ExtResource("3_4rrho")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2133037572]

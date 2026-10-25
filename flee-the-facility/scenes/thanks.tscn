@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://crb5kgilyrav"]
+
+[ext_resource type="Script" uid="uid://doh77eshh20qc" path="res://scripts/thanks.gd" id="1_nmttw"]
+[ext_resource type="Texture2D" uid="uid://bt5i4qcc5r066" path="res://sprites/aseprite/thanks.jpg" id="2_nmttw"]
+[ext_resource type="Texture2D" uid="uid://buv5uf4nikouq" path="res://sprites/aseprite/playbutton.jpg" id="3_ui04m"]
+[ext_resource type="Texture2D" uid="uid://bsd7eknuw8khj" path="res://sprites/aseprite/playbuttonpressed.jpg" id="4_id62x"]
+[ext_resource type="Texture2D" uid="uid://1me4euhtuex3" path="res://sprites/aseprite/playbuttonhover.jpg" id="5_ayivx"]
+[ext_resource type="Texture2D" uid="uid://c0p4mqcujem1h" path="res://sprites/aseprite/exitbutton.jpg" id="6_i5q1u"]
+[ext_resource type="Texture2D" uid="uid://ciwxbcgttk4j0" path="res://sprites/aseprite/exitbuttonpressed.jpg" id="7_jx4ct"]
+[ext_resource type="Texture2D" uid="uid://pj43pkwvt57e" path="res://sprites/aseprite/exitbuttonhover.jpg" id="8_8lf5u"]
+[ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="9_2xlri"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_nmttw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="thanks" type="Control" unique_id=1646660081]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nmttw")
+
+[node name="Control" type="Control" parent="." unique_id=709686006]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=571624440]
+sprite_frames = SubResource("SpriteFrames_3vyb7")
+
+[node name="Play" type="TextureButton" parent="Control" unique_id=1983622998]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 40.0
+offset_right = -20.0
+offset_bottom = 90.0
+texture_normal = ExtResource("3_ui04m")
+texture_pressed = ExtResource("4_id62x")
+texture_hover = ExtResource("5_ayivx")
+
+[node name="Exit" type="TextureButton" parent="Control" unique_id=13328873]
+layout_mode = 0
+offset_left = -199.0
+offset_top = 97.0
+offset_right = -19.0
+offset_bottom = 147.0
+texture_normal = ExtResource("6_i5q1u")
+texture_pressed = ExtResource("7_jx4ct")
+texture_hover = ExtResource("8_8lf5u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=253976865]
+visible = false
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("9_2xlri")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=808931105]
+
+[connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
