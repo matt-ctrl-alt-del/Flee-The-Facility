@@ -14,12 +14,14 @@ func _process(delta: float) -> void:
 
 
 func _on_play_pressed() -> void:
+	$CanvasLayer/Fade_transition.show()
 	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
 	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/stage_1.tscn")
 
 
 func _on_exit_pressed() -> void:
+	$CanvasLayer/Fade_transition.show()
 	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
 	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
 	get_tree().quit()

@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bc0waua5siky2"]
+
+[ext_resource type="Texture2D" uid="uid://dged5owipnnyj" path="res://sprites/items/diamond/diamond-Sheet.png" id="1_0a7ml"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okr8r"]
+atlas = ExtResource("1_0a7ml")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd64o"]
+atlas = ExtResource("1_0a7ml")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up2nb"]
+atlas = ExtResource("1_0a7ml")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5v7i"]
+atlas = ExtResource("1_0a7ml")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okr8r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd64o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up2nb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5v7i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvus5"]
+size = Vector2(14, 14)
+
+[node name="diamond" type="Area2D" unique_id=1409227192]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1085531337]
+sprite_frames = SubResource("SpriteFrames_662ny")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=448696944]
+shape = SubResource("RectangleShape2D_dvus5")

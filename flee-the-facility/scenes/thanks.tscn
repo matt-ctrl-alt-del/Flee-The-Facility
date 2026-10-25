@@ -65,7 +65,6 @@ texture_pressed = ExtResource("7_jx4ct")
 texture_hover = ExtResource("8_8lf5u")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=253976865]
-visible = false
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("9_2xlri")]
 

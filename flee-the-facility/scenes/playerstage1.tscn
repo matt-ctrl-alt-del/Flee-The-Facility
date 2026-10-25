@@ -1,26 +1,27 @@
 [gd_scene format=3 uid="uid://c2upmqlxv74q0"]
 
-[ext_resource type="Texture2D" uid="uid://00ts2yyahtgh" path="res://sprites/player/player-Sheet.jpg" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://cesq67sb2ar8e" path="res://sprites/player/playerupdated-Sheet.png" id="1_x6h5o"]
+[ext_resource type="Script" uid="uid://cafwcv5gohv57" path="res://scripts/playerstage_1.gd" id="1_xux8n"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(12, 11)
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fbmq"]
+radius = 8.01561
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
-atlas = ExtResource("1_3vyb7")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xux8n"]
+atlas = ExtResource("1_x6h5o")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("1_3vyb7")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_83orw"]
+atlas = ExtResource("1_x6h5o")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u47qm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g2els")
+"texture": SubResource("AtlasTexture_xux8n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhqgy")
+"texture": SubResource("AtlasTexture_83orw")
 }],
 "loop": 1,
 "name": &"default",
@@ -28,6 +29,9 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=506297317]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_xux8n")
 
 [node name="up" type="RayCast2D" parent="." unique_id=1510006758]
 position = Vector2(0, -8)
@@ -46,14 +50,14 @@ position = Vector2(8, 0)
 target_position = Vector2(8, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=482177973]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_dqkch")
+shape = SubResource("CircleShape2D_4fbmq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=615801295]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u47qm")
-frame_progress = 0.882399
+autoplay = "default"
+frame_progress = 0.20304818
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=114830108]
 position = Vector2(-1, -3)
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)

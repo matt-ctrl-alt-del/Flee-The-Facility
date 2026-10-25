@@ -4,18 +4,101 @@
 [ext_resource type="PackedScene" uid="uid://xrcq2njbqmll" path="res://scenes/map1.tscn" id="1_u47qm"]
 [ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/playerstage1.tscn" id="2_e77qm"]
 [ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="3_kx1yv"]
+[ext_resource type="PackedScene" uid="uid://bej6lym1o67nt" path="res://scenes/cube.tscn" id="5_bnu0w"]
+[ext_resource type="PackedScene" uid="uid://bmxtqhkq2bvcf" path="res://scenes/cone.tscn" id="6_pipme"]
+[ext_resource type="PackedScene" uid="uid://mhq7q6i2hfw4" path="res://scenes/box.tscn" id="7_rxqpy"]
+[ext_resource type="PackedScene" uid="uid://bc0waua5siky2" path="res://scenes/diamond.tscn" id="8_pu7io"]
+[ext_resource type="PackedScene" uid="uid://devt0430kwe8j" path="res://scenes/exit.tscn" id="9_pipme"]
+
+[sub_resource type="Gradient" id="Gradient_rxqpy"]
+offsets = PackedFloat32Array(0, 0.060240965, 0.40361446)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_005ff"]
+gradient = SubResource("Gradient_rxqpy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_pipme"]
+offsets = PackedFloat32Array(0.25903615, 0.6325301)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pu7io"]
+gradient = SubResource("Gradient_pipme")
+fill = 1
+fill_from = Vector2(0.47826087, 0.5)
 
 [node name="stage1" type="Node2D" unique_id=847449201]
 script = ExtResource("1_e77qm")
 
 [node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
+modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
 
 [node name="player" parent="." unique_id=506297317 instance=ExtResource("2_e77qm")]
-position = Vector2(49, 443)
+position = Vector2(67, 69)
+
+[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=860079896]
+blend_mode = 2
+texture = SubResource("GradientTexture2D_005ff")
+texture_scale = 7.54
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889432277]
-visible = false
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_kx1yv")]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1913345304]
+
+[node name="Items" type="Node" parent="." unique_id=1712922682]
+
+[node name="cube" parent="Items" unique_id=1075931460 instance=ExtResource("5_bnu0w")]
+position = Vector2(456, 312)
+scale = Vector2(0.8, 0.8)
+
+[node name="PointLight2D2" type="PointLight2D" parent="Items/cube" unique_id=233618156]
+position = Vector2(1.25, 0)
+scale = Vector2(0.4095998, 0.4095998)
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_pu7io")
+
+[node name="cone" parent="Items" unique_id=227380223 instance=ExtResource("6_pipme")]
+position = Vector2(1128, 504)
+scale = Vector2(0.8, 0.8)
+
+[node name="PointLight2D" type="PointLight2D" parent="Items/cone" unique_id=528129387]
+position = Vector2(1.249969, 1.2500098)
+scale = Vector2(0.63999987, 0.63999987)
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_pu7io")
+
+[node name="box" parent="Items" unique_id=123274744 instance=ExtResource("7_rxqpy")]
+position = Vector2(1128, 104)
+scale = Vector2(0.8, 0.8)
+
+[node name="PointLight2D" type="PointLight2D" parent="Items/box" unique_id=1098493705]
+position = Vector2(1.25, 1.2500153)
+scale = Vector2(0.79999995, 0.79999995)
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_pu7io")
+
+[node name="diamond" parent="Items" unique_id=1409227192 instance=ExtResource("8_pu7io")]
+position = Vector2(40, 104)
+scale = Vector2(0.8, 0.8)
+
+[node name="PointLight2D" type="PointLight2D" parent="Items/diamond" unique_id=801493033]
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_pu7io")
+
+[node name="exit" parent="Items" unique_id=2081861107 instance=ExtResource("9_pipme")]
+position = Vector2(411, 11)
+
+[node name="PointLight2D" type="PointLight2D" parent="Items/exit" unique_id=1409118015]
+position = Vector2(6, 1.9999998)
+scale = Vector2(0.8, 0.8)
+energy = 1.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_pu7io")

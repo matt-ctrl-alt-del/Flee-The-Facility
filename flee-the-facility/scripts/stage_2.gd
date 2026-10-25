@@ -13,4 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_item_body_entered(body: Node2D) -> void:
+	$CanvasLayer/Fade_transition.show()
+	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
+	await $CanvasLayer/Fade_transition/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file("res://scenes/thanks.tscn")

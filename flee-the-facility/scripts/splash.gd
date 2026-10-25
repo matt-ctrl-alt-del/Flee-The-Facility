@@ -6,7 +6,8 @@ extends Control
 @export var pause_time : float = 3.0
 @export var fade_out_time : float = 1.5
 @export var out_time : float = 0.5
-@export var splash_screen : TextureRect
+@export var splash_screen : AnimatedSprite2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

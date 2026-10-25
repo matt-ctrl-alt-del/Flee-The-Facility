@@ -6,14 +6,32 @@
 [ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="3_3vcav"]
 [ext_resource type="PackedScene" uid="uid://bmxtqhkq2bvcf" path="res://scenes/cone.tscn" id="5_frapx"]
 
+[sub_resource type="Gradient" id="Gradient_frapx"]
+offsets = PackedFloat32Array(0, 0.5421687)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_005ff"]
+gradient = SubResource("Gradient_frapx")
+width = 320
+height = 320
+fill = 1
+fill_from = Vector2(0.4695652, 0.5217391)
+
 [node name="stage2" type="Node2D" unique_id=2027670255]
 script = ExtResource("1_281x5")
 
 [node name="player" parent="." unique_id=506297317 instance=ExtResource("1_j3ydg")]
 z_index = 2
-position = Vector2(998, 317)
+position = Vector2(43, 605)
 collision_layer = 3
 collision_mask = 3
+
+[node name="PointLight2D" type="PointLight2D" parent="player" unique_id=1861300725]
+z_index = 1
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_005ff")
+texture_scale = 2.23
 
 [node name="map2" parent="." unique_id=1075189476 instance=ExtResource("1_6xfo1")]
 modulate = Color(0.7496324, 1, 0.78445125, 1)

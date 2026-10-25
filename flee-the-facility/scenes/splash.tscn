@@ -2,7 +2,64 @@
 
 [ext_resource type="Script" uid="uid://dranj4nejbb6w" path="res://scripts/splash.gd" id="1_86pdq"]
 [ext_resource type="PackedScene" uid="uid://duqnpwdoufxdy" path="res://scenes/Main_menu.tscn" id="2_10vqf"]
-[ext_resource type="Texture2D" uid="uid://cdut3stdprurv" path="res://sprites/aseprite/fleethefacility_splash.jpg" id="3_4rrho"]
+[ext_resource type="Texture2D" uid="uid://bvol0h2dvdo6e" path="res://sprites/aseprite/fleethefacility_splash-updated-Sheetcopy.jpg" id="3_4rrho"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5svwm"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31efs"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8158"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 1296, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4d6w"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 1944, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_651hb"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 2592, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1bu2"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 3240, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_440nw"]
+atlas = ExtResource("3_4rrho")
+region = Rect2(0, 3888, 1152, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fbmq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5svwm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31efs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8158")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4d6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_651hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1bu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_440nw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="splash" type="Control" unique_id=2039662830 node_paths=PackedStringArray("splash_screen")]
 layout_mode = 3
@@ -14,7 +71,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_86pdq")
 load_scene = ExtResource("2_10vqf")
-splash_screen = NodePath("CenterContainer/TextureRect")
+splash_screen = NodePath("CenterContainer/AnimatedSprite2D")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1089966638]
 layout_mode = 1
@@ -27,17 +84,17 @@ mouse_filter = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=2111051043]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer" unique_id=1979272356]
-
-[node name="TextureRect" type="TextureRect" parent="CenterContainer" unique_id=1768824502]
-layout_mode = 2
-texture = ExtResource("3_4rrho")
+sprite_frames = SubResource("SpriteFrames_4fbmq")
+autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2133037572]

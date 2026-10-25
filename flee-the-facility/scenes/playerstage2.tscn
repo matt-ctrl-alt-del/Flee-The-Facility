@@ -1,27 +1,27 @@
 [gd_scene format=3 uid="uid://715m1xqgelhc"]
 
-[ext_resource type="Script" uid="uid://bcyi2q687yupu" path="res://scenes/playerstage_2.gd" id="1_4fbmq"]
-[ext_resource type="Texture2D" uid="uid://00ts2yyahtgh" path="res://sprites/player/player-Sheet.jpg" id="1_uo7vt"]
+[ext_resource type="Script" uid="uid://bcyi2q687yupu" path="res://scripts/playerstage_2.gd" id="1_4fbmq"]
+[ext_resource type="Texture2D" uid="uid://cesq67sb2ar8e" path="res://sprites/player/playerupdated-Sheet.png" id="2_4fbmq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(16, 16)
+[sub_resource type="CircleShape2D" id="CircleShape2D_frapx"]
+radius = 8.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
-atlas = ExtResource("1_uo7vt")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojglq"]
+atlas = ExtResource("2_4fbmq")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
-atlas = ExtResource("1_uo7vt")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbjup"]
+atlas = ExtResource("2_4fbmq")
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u47qm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g2els")
+"texture": SubResource("AtlasTexture_ojglq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qhqgy")
+"texture": SubResource("AtlasTexture_lbjup")
 }],
 "loop": 1,
 "name": &"default",
@@ -32,13 +32,14 @@ animations = [{
 script = ExtResource("1_4fbmq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=482177973]
-shape = SubResource("RectangleShape2D_dqkch")
+shape = SubResource("CircleShape2D_frapx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=615801295]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_u47qm")
-frame_progress = 0.882399
+autoplay = "default"
+frame_progress = 0.7811584
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=114830108]
 position = Vector2(-1, -3)
-zoom = Vector2(3, 3)
+zoom = Vector2(3.5, 3.5)
