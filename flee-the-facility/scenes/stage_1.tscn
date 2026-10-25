@@ -11,6 +11,7 @@
 [node name="player" parent="." unique_id=506297317 instance=ExtResource("2_e77qm")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889432277]
+visible = false
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_kx1yv")]
 
