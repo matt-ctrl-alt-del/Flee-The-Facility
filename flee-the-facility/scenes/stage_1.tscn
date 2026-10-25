@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://pv1ogywql5j"]
+
+[ext_resource type="PackedScene" uid="uid://xrcq2njbqmll" path="res://scenes/map.tscn" id="1_u47qm"]
+[ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/player.tscn" id="2_e77qm"]
+[ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="3_kx1yv"]
+
+[node name="stage1" type="Node2D" unique_id=847449201]
+
+[node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
+
+[node name="player" parent="." unique_id=506297317 instance=ExtResource("2_e77qm")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889432277]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_kx1yv")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1913345304]

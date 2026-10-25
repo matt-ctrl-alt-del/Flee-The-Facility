@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c2upmqlxv74q0"]
+
+[node name="player" type="CharacterBody2D" unique_id=506297317]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=482177973]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=615801295]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=114830108]
+position = Vector2(-1, -3)

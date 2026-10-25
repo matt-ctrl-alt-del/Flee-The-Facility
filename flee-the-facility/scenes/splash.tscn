@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dojvhb7u3vntx"]
+
+[node name="splash" type="Control" unique_id=2039662830]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1089966638]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2111051043]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CenterContainer" unique_id=1979272356]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2133037572]
