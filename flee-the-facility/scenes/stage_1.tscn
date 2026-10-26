@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://jp5kn1q5ng6m" path="res://scripts/stage_1.gd" id="1_e77qm"]
 [ext_resource type="PackedScene" uid="uid://xrcq2njbqmll" path="res://scenes/map1.tscn" id="1_u47qm"]
-[ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/playerstage1.tscn" id="2_e77qm"]
+[ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/player.tscn" id="2_e77qm"]
+[ext_resource type="PackedScene" uid="uid://by1137acdy1y2" path="res://scenes/enemy_1.tscn" id="2_rxqpy"]
 [ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="3_kx1yv"]
 [ext_resource type="PackedScene" uid="uid://bej6lym1o67nt" path="res://scenes/cube.tscn" id="5_bnu0w"]
 [ext_resource type="PackedScene" uid="uid://bmxtqhkq2bvcf" path="res://scenes/cone.tscn" id="6_pipme"]
@@ -31,29 +32,38 @@ fill_from = Vector2(0.47826087, 0.5)
 [node name="stage1" type="Node2D" unique_id=847449201]
 script = ExtResource("1_e77qm")
 
-[node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
-modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
-
 [node name="player" parent="." unique_id=506297317 instance=ExtResource("2_e77qm")]
-position = Vector2(67, 69)
+z_index = 1
+position = Vector2(489, 268)
+collision_layer = 3
+collision_mask = 3
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=860079896]
 blend_mode = 2
 texture = SubResource("GradientTexture2D_005ff")
 texture_scale = 7.54
 
+[node name="Enemy1" parent="." unique_id=1375445823 groups=["player"] instance=ExtResource("2_rxqpy")]
+z_index = 1
+position = Vector2(184, 56)
+scale = Vector2(0.8, 0.8)
+
+[node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
+modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889432277]
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_kx1yv")]
-visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1913345304]
 
 [node name="Items" type="Node" parent="." unique_id=1712922682]
 
 [node name="cube" parent="Items" unique_id=1075931460 instance=ExtResource("5_bnu0w")]
-position = Vector2(456, 312)
+position = Vector2(418, 195)
 scale = Vector2(0.8, 0.8)
+collision_layer = 1
+collision_mask = 1
 
 [node name="PointLight2D2" type="PointLight2D" parent="Items/cube" unique_id=233618156]
 position = Vector2(1.25, 0)
@@ -63,7 +73,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="cone" parent="Items" unique_id=227380223 instance=ExtResource("6_pipme")]
-position = Vector2(1128, 504)
+position = Vector2(469.99997, 223.99998)
 scale = Vector2(0.8, 0.8)
 
 [node name="PointLight2D" type="PointLight2D" parent="Items/cone" unique_id=528129387]
@@ -74,8 +84,10 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="box" parent="Items" unique_id=123274744 instance=ExtResource("7_rxqpy")]
-position = Vector2(1128, 104)
+position = Vector2(410.00006, 143)
 scale = Vector2(0.8, 0.8)
+collision_layer = 1
+collision_mask = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Items/box" unique_id=1098493705]
 position = Vector2(1.25, 1.2500153)
@@ -85,8 +97,10 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="diamond" parent="Items" unique_id=1409227192 instance=ExtResource("8_pu7io")]
-position = Vector2(40, 104)
+position = Vector2(413, 231.99998)
 scale = Vector2(0.8, 0.8)
+collision_layer = 1
+collision_mask = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Items/diamond" unique_id=801493033]
 energy = 1.5
@@ -94,7 +108,8 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="exit" parent="Items" unique_id=2081861107 instance=ExtResource("9_pipme")]
-position = Vector2(411, 11)
+z_index = 1
+position = Vector2(411, 14)
 
 [node name="PointLight2D" type="PointLight2D" parent="Items/exit" unique_id=1409118015]
 position = Vector2(6, 1.9999998)
@@ -102,3 +117,9 @@ scale = Vector2(0.8, 0.8)
 energy = 1.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
+
+[connection signal="body_entered" from="Items/cube" to="." method="_on_cube_body_entered"]
+[connection signal="body_entered" from="Items/cone" to="." method="_on_cone_body_entered"]
+[connection signal="body_entered" from="Items/box" to="." method="_on_box_body_entered"]
+[connection signal="body_entered" from="Items/diamond" to="." method="_on_diamond_body_entered"]
+[connection signal="body_entered" from="Items/exit" to="." method="_on_exit_body_entered"]

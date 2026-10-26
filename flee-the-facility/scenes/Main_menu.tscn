@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://duqnpwdoufxdy"]
 
-[ext_resource type="Texture2D" uid="uid://33em53b03giu" path="res://sprites/aseprite/main menu.jpg" id="1_d1rr7"]
 [ext_resource type="Script" uid="uid://blsn8ihu0dkay" path="res://scripts/main_menu.gd" id="1_q4q5n"]
 [ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="1_u5440"]
+[ext_resource type="Texture2D" uid="uid://ylqg7ifrs3si" path="res://sprites/aseprite/main menu updated.jpg" id="2_q4q5n"]
 [ext_resource type="Texture2D" uid="uid://buv5uf4nikouq" path="res://sprites/aseprite/playbutton.jpg" id="3_m5x4w"]
 [ext_resource type="Texture2D" uid="uid://bsd7eknuw8khj" path="res://sprites/aseprite/playbuttonpressed.jpg" id="4_xkoo8"]
 [ext_resource type="Texture2D" uid="uid://1me4euhtuex3" path="res://sprites/aseprite/playbuttonhover.jpg" id="5_k7amj"]
@@ -10,11 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://ciwxbcgttk4j0" path="res://sprites/aseprite/exitbuttonpressed.jpg" id="7_tpbep"]
 [ext_resource type="Texture2D" uid="uid://pj43pkwvt57e" path="res://sprites/aseprite/exitbuttonhover.jpg" id="8_ybp8l"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5x4w"]
+atlas = ExtResource("2_q4q5n")
+region = Rect2(0, 0, 1152, 648)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_3vyb7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_d1rr7")
+"texture": SubResource("AtlasTexture_m5x4w")
 }],
 "loop": 1,
 "name": &"default",
@@ -43,23 +47,25 @@ mouse_filter = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control" unique_id=571624440]
 sprite_frames = SubResource("SpriteFrames_3vyb7")
+autoplay = "default"
+frame_progress = 0.9524766
 
 [node name="Play" type="TextureButton" parent="Control" unique_id=1983622998]
 layout_mode = 0
-offset_left = -165.0
-offset_top = 162.0
-offset_right = 15.0
-offset_bottom = 212.0
+offset_left = -212.0
+offset_top = 127.0
+offset_right = -32.0
+offset_bottom = 177.0
 texture_normal = ExtResource("3_m5x4w")
 texture_pressed = ExtResource("4_xkoo8")
 texture_hover = ExtResource("5_k7amj")
 
 [node name="Exit" type="TextureButton" parent="Control" unique_id=13328873]
 layout_mode = 0
-offset_left = -164.0
-offset_top = 219.0
-offset_right = 16.0
-offset_bottom = 269.0
+offset_left = -211.0
+offset_top = 184.0
+offset_right = -31.0
+offset_bottom = 234.0
 texture_normal = ExtResource("6_0mtrp")
 texture_pressed = ExtResource("7_tpbep")
 texture_hover = ExtResource("8_ybp8l")

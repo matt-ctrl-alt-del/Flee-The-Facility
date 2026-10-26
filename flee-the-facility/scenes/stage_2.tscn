@@ -37,7 +37,6 @@ texture_scale = 2.23
 modulate = Color(0.7496324, 1, 0.78445125, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1363277264]
-visible = false
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_3vcav")]
 

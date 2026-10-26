@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://sootkher5cbn"]
+
+[ext_resource type="Texture2D" uid="uid://bjmi53j771t1c" path="res://sprites/npcs/npc2-Sheet.png" id="1_hqy2m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi5i3"]
+atlas = ExtResource("1_hqy2m")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh86k"]
+atlas = ExtResource("1_hqy2m")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_662ny"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi5i3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh86k")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_005ff"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hui80"]
+radius = 5.0
+
+[node name="Enemy2" type="CharacterBody2D" unique_id=65746991]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=128747181]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_662ny")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=339561392]
+shape = SubResource("CircleShape2D_005ff")
+
+[node name="kill zone" type="Area2D" parent="." unique_id=1640898859]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill zone" unique_id=2105650253]
+shape = SubResource("CircleShape2D_hui80")
+
+[node name="right" type="RayCast2D" parent="." unique_id=356643217]
+position = Vector2(8, 0)
+target_position = Vector2(8, 0)
+
+[node name="left" type="RayCast2D" parent="." unique_id=1739494364]
+position = Vector2(-8, 0)
+target_position = Vector2(-8, 0)
+
+[node name="up" type="RayCast2D" parent="." unique_id=893200578]
+position = Vector2(0, -8)
+target_position = Vector2(0, -8)
+
+[node name="down" type="RayCast2D" parent="." unique_id=768235309]
+position = Vector2(0, 8)
+target_position = Vector2(0, 8)
