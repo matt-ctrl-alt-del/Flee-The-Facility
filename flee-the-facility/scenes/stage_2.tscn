@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://chun4bh11xwg2" path="res://scenes/tracker.tscn" id="5_1kkqg"]
 [ext_resource type="PackedScene" uid="uid://bmxtqhkq2bvcf" path="res://scenes/cone.tscn" id="5_frapx"]
 [ext_resource type="PackedScene" uid="uid://mhq7q6i2hfw4" path="res://scenes/box.tscn" id="5_pqrsv"]
+[ext_resource type="Script" uid="uid://cgncwlap0uubi" path="res://scripts/sub_viewport.gd" id="6_sv3jd"]
+[ext_resource type="Texture2D" uid="uid://cahy3rooaq083" path="res://sprites/minimap/minimap2.png" id="6_x5gfk"]
 [ext_resource type="PackedScene" uid="uid://bej6lym1o67nt" path="res://scenes/cube.tscn" id="7_1kkqg"]
+[ext_resource type="Texture2D" uid="uid://1j67c88xj7ct" path="res://sprites/minimap/playerupdated2.png" id="7_sv3jd"]
 [ext_resource type="PackedScene" uid="uid://bc0waua5siky2" path="res://scenes/diamond.tscn" id="8_u60j5"]
 [ext_resource type="PackedScene" uid="uid://devt0430kwe8j" path="res://scenes/exit.tscn" id="10_u60j5"]
 
@@ -34,8 +37,11 @@ gradient = SubResource("Gradient_pqrsv")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="stage2" type="Node2D" unique_id=2027670255]
+[node name="stage2" type="Node2D" unique_id=2027670255 node_paths=PackedStringArray("player", "exit_area", "distance_label")]
 script = ExtResource("1_281x5")
+player = NodePath("player")
+exit_area = NodePath("exit")
+distance_label = NodePath("CanvasLayer/Label")
 
 [node name="player" parent="." unique_id=506297317 instance=ExtResource("1_j3ydg")]
 z_index = 2
@@ -56,7 +62,6 @@ modulate = Color(0.44357347, 0.99999994, 0.5681659, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1363277264]
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_3vcav")]
-visible = false
 
 [node name="Tracker" parent="CanvasLayer" unique_id=479441653 instance=ExtResource("5_1kkqg")]
 
@@ -66,6 +71,36 @@ offset_top = 108.0
 offset_right = 88.0
 offset_bottom = 131.0
 text = "Items Collected: 0"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=1366423646]
+offset_left = 1028.0
+offset_top = 25.0
+offset_right = 1540.0
+offset_bottom = 537.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=1265646367]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+script = ExtResource("6_sv3jd")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=271074920]
+visible = false
+texture = ExtResource("6_x5gfk")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=1637300005]
+zoom = Vector2(0.45, 0.45)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer" unique_id=2026830283]
+position = Vector2(50, 50)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_sv3jd")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2019730518]
+offset_left = 795.0
+offset_top = 41.0
+offset_right = 835.0
+offset_bottom = 64.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1005676501]
 stream = SubResource("AudioStreamMP3_frapx")

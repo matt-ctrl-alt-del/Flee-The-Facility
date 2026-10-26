@@ -2,6 +2,10 @@ extends Node2D
 
 var items = 0
 
+@export var player: CharacterBody2D
+@export var exit_area: Area2D
+@export var distance_label: Label
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$CanvasLayer/Tracker/HBoxContainer/Box.modulate.a = 0.25
@@ -14,7 +18,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not player or not exit_area or not distance_label:
+		return
+		
+	var distance = player.global_position.distance_to(exit_area.global_position)
+	distance_label.text = "Distance to exit: " + (str(round(distance))) + "m"
 
 
 func _on_box_body_entered(body: Node2D) -> void:
