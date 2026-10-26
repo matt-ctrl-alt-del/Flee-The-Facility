@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dranj4nejbb6w" path="res://scripts/splash.gd" id="1_86pdq"]
 [ext_resource type="PackedScene" uid="uid://duqnpwdoufxdy" path="res://scenes/Main_menu.tscn" id="2_10vqf"]
 [ext_resource type="Texture2D" uid="uid://bvol0h2dvdo6e" path="res://sprites/aseprite/fleethefacility_splash-updated-Sheetcopy.jpg" id="3_4rrho"]
+[ext_resource type="AudioStream" uid="uid://b2l5imeugwxl6" path="res://audio/FleeTheFacilityMainMix.mp3" id="4_5svwm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5svwm"]
 atlas = ExtResource("3_4rrho")
@@ -98,3 +99,6 @@ sprite_frames = SubResource("SpriteFrames_4fbmq")
 autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2133037572]
+stream = ExtResource("4_5svwm")
+pitch_scale = 0.69
+autoplay = true

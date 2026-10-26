@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://chun4bh11xwg2"]
+
+[ext_resource type="Texture2D" uid="uid://jrmjdt8gral7" path="res://sprites/items/box/box1.png" id="1_dcoxp"]
+[ext_resource type="Texture2D" uid="uid://hvagq3qiv7no" path="res://sprites/items/cone/cone1.png" id="2_2oy2a"]
+[ext_resource type="Texture2D" uid="uid://lt3r4bye2n4g" path="res://sprites/items/cube/cube1.png" id="3_k524b"]
+[ext_resource type="Texture2D" uid="uid://b8uyo6ovykv5p" path="res://sprites/items/diamond/diamond1.png" id="4_2o4v1"]
+
+[node name="Tracker" type="Control" unique_id=479441653]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, 30)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=122282448]
+layout_mode = 1
+offset_right = 256.0
+offset_bottom = 64.0
+
+[node name="Box" type="TextureRect" parent="HBoxContainer" unique_id=1809738457]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("1_dcoxp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Cone" type="TextureRect" parent="HBoxContainer" unique_id=1314063222]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_2oy2a")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Cube" type="TextureRect" parent="HBoxContainer" unique_id=1516156089]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_k524b")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Diamond" type="TextureRect" parent="HBoxContainer" unique_id=713826377]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("4_2o4v1")
+expand_mode = 1
+stretch_mode = 4

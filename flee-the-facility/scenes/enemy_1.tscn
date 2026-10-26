@@ -67,3 +67,5 @@ hit_from_inside = true
 position = Vector2(0, 8)
 target_position = Vector2(0, 8)
 hit_from_inside = true
+
+[connection signal="body_entered" from="kill zone" to="." method="_on_kill_zone_body_entered"]

@@ -5,9 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://c2upmqlxv74q0" path="res://scenes/player.tscn" id="2_e77qm"]
 [ext_resource type="PackedScene" uid="uid://by1137acdy1y2" path="res://scenes/enemy_1.tscn" id="2_rxqpy"]
 [ext_resource type="PackedScene" uid="uid://lth8ch4j3h32" path="res://scenes/Fade_transition.tscn" id="3_kx1yv"]
+[ext_resource type="PackedScene" uid="uid://sootkher5cbn" path="res://scenes/enemy_2.tscn" id="4_pu7io"]
 [ext_resource type="PackedScene" uid="uid://bej6lym1o67nt" path="res://scenes/cube.tscn" id="5_bnu0w"]
 [ext_resource type="PackedScene" uid="uid://bmxtqhkq2bvcf" path="res://scenes/cone.tscn" id="6_pipme"]
+[ext_resource type="PackedScene" uid="uid://chun4bh11xwg2" path="res://scenes/tracker.tscn" id="7_k3p0l"]
 [ext_resource type="PackedScene" uid="uid://mhq7q6i2hfw4" path="res://scenes/box.tscn" id="7_rxqpy"]
+[ext_resource type="AudioStream" uid="uid://b2l5imeugwxl6" path="res://audio/FleeTheFacilityMainMix.mp3" id="8_ilkkl"]
 [ext_resource type="PackedScene" uid="uid://bc0waua5siky2" path="res://scenes/diamond.tscn" id="8_pu7io"]
 [ext_resource type="PackedScene" uid="uid://devt0430kwe8j" path="res://scenes/exit.tscn" id="9_pipme"]
 
@@ -32,9 +35,9 @@ fill_from = Vector2(0.47826087, 0.5)
 [node name="stage1" type="Node2D" unique_id=847449201]
 script = ExtResource("1_e77qm")
 
-[node name="player" parent="." unique_id=506297317 instance=ExtResource("2_e77qm")]
+[node name="player" parent="." unique_id=506297317 groups=["player"] instance=ExtResource("2_e77qm")]
 z_index = 1
-position = Vector2(489, 268)
+position = Vector2(39, 72)
 collision_layer = 3
 collision_mask = 3
 
@@ -43,10 +46,14 @@ blend_mode = 2
 texture = SubResource("GradientTexture2D_005ff")
 texture_scale = 7.54
 
-[node name="Enemy1" parent="." unique_id=1375445823 groups=["player"] instance=ExtResource("2_rxqpy")]
+[node name="Enemy1" parent="." unique_id=1375445823 instance=ExtResource("2_rxqpy")]
 z_index = 1
 position = Vector2(184, 56)
 scale = Vector2(0.8, 0.8)
+
+[node name="Enemy2" parent="." unique_id=65746991 instance=ExtResource("4_pu7io")]
+z_index = 1
+position = Vector2(137, 88)
 
 [node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
 modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
@@ -55,12 +62,17 @@ modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_kx1yv")]
 
+[node name="Tracker" parent="CanvasLayer" unique_id=479441653 instance=ExtResource("7_k3p0l")]
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1913345304]
+stream = ExtResource("8_ilkkl")
+pitch_scale = 0.69
+autoplay = true
 
 [node name="Items" type="Node" parent="." unique_id=1712922682]
 
 [node name="cube" parent="Items" unique_id=1075931460 instance=ExtResource("5_bnu0w")]
-position = Vector2(418, 195)
+position = Vector2(40.00003, 104.00001)
 scale = Vector2(0.8, 0.8)
 collision_layer = 1
 collision_mask = 1
@@ -73,7 +85,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="cone" parent="Items" unique_id=227380223 instance=ExtResource("6_pipme")]
-position = Vector2(469.99997, 223.99998)
+position = Vector2(1127.9999, 24.00003)
 scale = Vector2(0.8, 0.8)
 
 [node name="PointLight2D" type="PointLight2D" parent="Items/cone" unique_id=528129387]
@@ -84,7 +96,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="box" parent="Items" unique_id=123274744 instance=ExtResource("7_rxqpy")]
-position = Vector2(410.00006, 143)
+position = Vector2(1127.9999, 503.99997)
 scale = Vector2(0.8, 0.8)
 collision_layer = 1
 collision_mask = 1
@@ -97,7 +109,7 @@ shadow_enabled = true
 texture = SubResource("GradientTexture2D_pu7io")
 
 [node name="diamond" parent="Items" unique_id=1409227192 instance=ExtResource("8_pu7io")]
-position = Vector2(413, 231.99998)
+position = Vector2(776, 535.99994)
 scale = Vector2(0.8, 0.8)
 collision_layer = 1
 collision_mask = 1

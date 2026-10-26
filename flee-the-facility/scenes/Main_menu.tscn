@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c0p4mqcujem1h" path="res://sprites/aseprite/exitbutton.jpg" id="6_0mtrp"]
 [ext_resource type="Texture2D" uid="uid://ciwxbcgttk4j0" path="res://sprites/aseprite/exitbuttonpressed.jpg" id="7_tpbep"]
 [ext_resource type="Texture2D" uid="uid://pj43pkwvt57e" path="res://sprites/aseprite/exitbuttonhover.jpg" id="8_ybp8l"]
+[ext_resource type="AudioStream" uid="uid://b2l5imeugwxl6" path="res://audio/FleeTheFacilityMainMix.mp3" id="10_m5x4w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m5x4w"]
 atlas = ExtResource("2_q4q5n")
@@ -75,6 +76,9 @@ texture_hover = ExtResource("8_ybp8l")
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("1_u5440")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=808931105]
+stream = ExtResource("10_m5x4w")
+pitch_scale = 0.69
+autoplay = true
 
 [connection signal="pressed" from="Control/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/Exit" to="." method="_on_exit_pressed"]
