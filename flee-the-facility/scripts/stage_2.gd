@@ -19,6 +19,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not player or not exit_area or not distance_label:
+		print("error, check code, not player/not area/not labels triggered")
 		return
 		
 	var distance = player.global_position.distance_to(exit_area.global_position)

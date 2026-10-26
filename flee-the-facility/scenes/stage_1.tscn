@@ -35,8 +35,11 @@ gradient = SubResource("Gradient_pipme")
 fill = 1
 fill_from = Vector2(0.47826087, 0.5)
 
-[node name="stage1" type="Node2D" unique_id=847449201]
+[node name="stage1" type="Node2D" unique_id=847449201 node_paths=PackedStringArray("player", "exit_area", "distance_label")]
 script = ExtResource("1_e77qm")
+player = NodePath("player")
+exit_area = NodePath("Items/exit")
+distance_label = NodePath("CanvasLayer/Label")
 
 [node name="player" parent="." unique_id=506297317 groups=["player"] instance=ExtResource("2_e77qm")]
 z_index = 1
@@ -99,6 +102,12 @@ zoom = Vector2(0.45, 0.45)
 position = Vector2(50, 50)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("10_ybch3")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=535583903]
+offset_left = 838.0
+offset_top = 28.0
+offset_right = 878.0
+offset_bottom = 51.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1913345304]
 stream = ExtResource("8_ilkkl")

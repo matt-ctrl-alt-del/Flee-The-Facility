@@ -1,6 +1,11 @@
 extends Node2D
 
-var items = 0.0
+var items = 0
+
+@export var player: CharacterBody2D
+@export var exit_area: Area2D
+@export var distance_label: Label
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,8 +20,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-"res://audio/FleeTheFacilityMainMix.mp3"
+	if not player or not exit_area or not distance_label: 
+		print("Error check code")
+		return
+	var distance = player.global_position.distance_to(exit_area.global_position)
+	distance_label.text = "Distance to exit: " + (str(round(distance))) + "m"
 
 
 func _on_exit_body_entered(body: Node2D) -> void:
