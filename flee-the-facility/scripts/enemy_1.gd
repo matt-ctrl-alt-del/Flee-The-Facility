@@ -32,8 +32,8 @@ func _physics_process(delta: float) -> void:
 		else:
 			if direction_to_player.y > 0 and not $down.is_colliding(): _move(Vector2(0,1))
 			elif direction_to_player.y < 0 and not $up.is_colliding(): _move(Vector2(0,-1))
-			elif direction_to_player.x > 0 and not $right.is_colliding(): _move(Vector2(0,1))
-			elif direction_to_player.x < 0 and not $left.is_colliding(): _move(Vector2(0,-1))
+			elif direction_to_player.x > 0 and not $right.is_colliding(): _move(Vector2(1,0))
+			elif direction_to_player.x < 0 and not $left.is_colliding(): _move(Vector2(-1,0))
 
 func _move(dir: Vector2):
 	var target_position = global_position + (dir * tile_size)

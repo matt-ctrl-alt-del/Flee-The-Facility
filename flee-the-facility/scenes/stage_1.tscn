@@ -37,9 +37,7 @@ script = ExtResource("1_e77qm")
 
 [node name="player" parent="." unique_id=506297317 groups=["player"] instance=ExtResource("2_e77qm")]
 z_index = 1
-position = Vector2(39, 72)
-collision_layer = 3
-collision_mask = 3
+position = Vector2(72, 401)
 
 [node name="PointLight2D" type="PointLight2D" parent="player" unique_id=860079896]
 blend_mode = 2
@@ -48,12 +46,17 @@ texture_scale = 7.54
 
 [node name="Enemy1" parent="." unique_id=1375445823 instance=ExtResource("2_rxqpy")]
 z_index = 1
-position = Vector2(184, 56)
+position = Vector2(384, 584.99994)
+scale = Vector2(0.8, 0.8)
+
+[node name="Enemy3" parent="." unique_id=644431985 instance=ExtResource("2_rxqpy")]
+z_index = 1
+position = Vector2(409, 302.99997)
 scale = Vector2(0.8, 0.8)
 
 [node name="Enemy2" parent="." unique_id=65746991 instance=ExtResource("4_pu7io")]
 z_index = 1
-position = Vector2(137, 88)
+position = Vector2(1113, 457)
 
 [node name="map" parent="." unique_id=1477044799 instance=ExtResource("1_u47qm")]
 modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
@@ -61,11 +64,20 @@ modulate = Color(0.47397572, 0.47397572, 0.47397572, 1)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1889432277]
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=91017152 instance=ExtResource("3_kx1yv")]
+visible = false
 
 [node name="Tracker" parent="CanvasLayer" unique_id=479441653 instance=ExtResource("7_k3p0l")]
 
+[node name="LabelItems" type="Label" parent="CanvasLayer" unique_id=332691824]
+offset_left = 41.0
+offset_top = 117.0
+offset_right = 81.0
+offset_bottom = 140.0
+text = "Items Collected: 0"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1913345304]
 stream = ExtResource("8_ilkkl")
+volume_db = -8.261
 pitch_scale = 0.69
 autoplay = true
 

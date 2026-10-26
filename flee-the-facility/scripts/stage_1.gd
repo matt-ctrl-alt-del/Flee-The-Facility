@@ -37,6 +37,7 @@ func _on_box_body_entered(body: Node2D) -> void:
 	$Items/box.queue_free()
 	$Items/box/PointLight2D.queue_free()
 	$CanvasLayer/Tracker/HBoxContainer/Box.modulate.a = 1.0
+	$CanvasLayer/LabelItems.text = "Items Collected: " + (str(items))
 
 func _on_diamond_body_entered(body: Node2D) -> void:
 	items += 1
@@ -44,6 +45,7 @@ func _on_diamond_body_entered(body: Node2D) -> void:
 	$Items/diamond.queue_free()
 	$Items/diamond/PointLight2D.queue_free()
 	$CanvasLayer/Tracker/HBoxContainer/Diamond.modulate.a = 1.0
+	$CanvasLayer/LabelItems.text = "Items Collected: " + (str(items))
 
 func _on_cone_body_entered(body: Node2D) -> void:
 	items += 1
@@ -51,6 +53,7 @@ func _on_cone_body_entered(body: Node2D) -> void:
 	$Items/cone.queue_free()
 	$Items/cone/PointLight2D.queue_free()
 	$CanvasLayer/Tracker/HBoxContainer/Cone.modulate.a = 1.0
+	$CanvasLayer/LabelItems.text = "Items Collected: " + (str(items))
 
 func _on_cube_body_entered(body: Node2D) -> void:
 	items += 1
@@ -58,3 +61,4 @@ func _on_cube_body_entered(body: Node2D) -> void:
 	$Items/cube.queue_free()
 	$Items/cube/PointLight2D2.queue_free()
 	$CanvasLayer/Tracker/HBoxContainer/Cube.modulate.a = 1.0
+	$CanvasLayer/LabelItems.text = "Items Collected: " + (str(items))

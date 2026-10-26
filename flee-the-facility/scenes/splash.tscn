@@ -100,5 +100,6 @@ autoplay = "default"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2133037572]
 stream = ExtResource("4_5svwm")
+volume_db = -8.261
 pitch_scale = 0.69
 autoplay = true

@@ -77,6 +77,7 @@ texture_hover = ExtResource("8_ybp8l")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=808931105]
 stream = ExtResource("10_m5x4w")
+volume_db = -8.261
 pitch_scale = 0.69
 autoplay = true
 

@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cafwcv5gohv57" path="res://scripts/playerstage_1.gd" id="1_xux8n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4fbmq"]
-radius = 6.0
+radius = 8.062258
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xux8n"]
 atlas = ExtResource("1_x6h5o")
@@ -29,6 +29,8 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=506297317]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_xux8n")
 
 [node name="up" type="RayCast2D" parent="." unique_id=1510006758]
