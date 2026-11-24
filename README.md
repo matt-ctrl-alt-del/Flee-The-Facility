@@ -16,6 +16,10 @@ Move right - D/arrow right
 Jump - spacebar
 Special Features of the game: Tilemap-based movement, minimap, lighting/shadows, item trackers, distance trackers, original ost, original art.
 
+<h3> Play: </h3>
+It can be played at: 
+https://matt-not-found.itch.io/flee-the-facility
+
 <h3> Additional info: </h3>
 It is comprised of a tilemap layer movement mechanic maze and a platformer. The audio there is the first music or ost I have ever made (it sucks, but at least #noaislop) and all art are mine. Some features include: minimaps, distance trackers, items, lighting,. and the tilemap movement. I hope everyone would have fun (or be unsettled LOL) of the game that represents everything I know so far. 
 
