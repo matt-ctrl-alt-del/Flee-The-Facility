@@ -1,6 +1,7 @@
 # Flee The Facility
 
-<img width="640" height="360" alt="GitHub GIF - Flee the Facility" src="https://github.com/user-attachments/assets/6d8ae902-bc0c-4800-9909-8778699354d5" />
+<img width="320" height="180" alt="GitHub GIF - Flee the Facility" src="https://github.com/user-attachments/assets/a618cb3f-237c-4455-9f82-e15ad3b4bdd6" />
+
 <hr>
 
 <h3> Story: </h3>
