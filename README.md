@@ -9,11 +9,11 @@ You are a slime trying to escape a facility! Escape past the confusing maze and 
 
 
 <h3> Controls: </h3>
-Move up - W/arrow up
-Move down - S/arrow down
-Move left - A/arrow left
-Move right - D/arrow right
-Jump - spacebar
+Move up - W/arrow up, 
+Move down - S/arrow down, 
+Move left - A/arrow left, 
+Move right - D/arrow right, 
+Jump - spacebar. 
 Special Features of the game: Tilemap-based movement, minimap, lighting/shadows, item trackers, distance trackers, original ost, original art.
 
 <h3> Play: </h3>
